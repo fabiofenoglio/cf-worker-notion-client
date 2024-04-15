@@ -8,6 +8,6 @@
     },
     "dependencies": {
         "@notionhq/client": "^2.2.13",
-        "cf-worker-notion-client": "github:fabiofenoglio/cf-worker-notion-client"
+        "cf-worker-utils": "github:fabiofenoglio/cf-worker-utils"
     }
 }
