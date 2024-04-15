@@ -1,0 +1,13 @@
+{
+    "name": "cf-worker-utils",
+    "version": "0.0.2",
+    "private": true,
+    "scripts": {},
+    "devDependencies": {
+        "typescript": "^5.3.2"
+    },
+    "dependencies": {
+        "@notionhq/client": "^2.2.13",
+        "cf-worker-utils": "github:fabiofenoglio/cf-worker-utils"
+    }
+}
