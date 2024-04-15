@@ -1,1 +1,1 @@
-# cf-worker-utils
+# cf-worker-notion-client

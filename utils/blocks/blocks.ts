@@ -1,5 +1,5 @@
 import { BlockObjectRequest } from "@notionhq/client/build/src/api-endpoints";
-import { chunkString } from "cf-worker-utils/strings";
+import { chunkString } from "cf-worker-notion-client/strings";
 
 export function stringToBlocks(raw: string): BlockObjectRequest[] {
 	const out: BlockObjectRequest[] = [];
