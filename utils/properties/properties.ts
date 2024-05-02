@@ -108,6 +108,22 @@ export function getPropertyFormulaDateStart(page: PageObjectResponse, propertyNa
 	return prop.formula.date?.start ?? null;
 }
 
+export function getPropertyFormulaNumber(page: PageObjectResponse, propertyName: string): number | null {
+	const prop = page.properties[propertyName];
+	if (!prop) {
+		throw new Error('missing required property "' + propertyName + '"');
+	}
+	const requiredPropertyType = 'formula';
+	if (prop.type !== requiredPropertyType) {
+		throw new Error('invalid property type: expected "' + requiredPropertyType + '", got "' + prop.type + '"');
+	}
+	const requiredPropertyFormulaType = 'number';
+	if (prop.formula.type !== requiredPropertyFormulaType) {
+		throw new Error('invalid formula type: expected "' + requiredPropertyFormulaType + '", got "' + prop.formula.type + '"');
+	}
+	return prop.formula.number;
+}
+
 export function getPropertyURL(page: PageObjectResponse, propertyName: string): string | null {
 	const prop = page.properties[propertyName];
 	if (!prop) {
