@@ -119,3 +119,18 @@ export function getPropertyURL(page: PageObjectResponse, propertyName: string): 
 	}
 	return prop.url ?? null;
 }
+
+export function getPropertyText(page: PageObjectResponse, propertyName: string): string | null {
+	const prop = page.properties[propertyName];
+	if (!prop) {
+		throw new Error('missing required property "' + propertyName + '"');
+	}
+	const requiredPropertyType = 'rich_text';
+	if (prop.type !== requiredPropertyType) {
+		throw new Error('invalid property type: expected "' + requiredPropertyType + '", got "' + prop.type + '"');
+	}
+	if (!prop.rich_text.length) {
+		return null;
+	}
+	return prop.rich_text[0].plain_text;
+}
