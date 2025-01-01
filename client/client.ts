@@ -1,6 +1,6 @@
 import { Client, LogLevel } from "@notionhq/client"
 import { PageObjectResponse, QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
-import { searchWithPagination } from "../utils/operations";
+import { searchWithPagination } from "../utils";
 
 export class NotionClient extends Client {
 
